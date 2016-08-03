@@ -2,7 +2,23 @@ module Dashing
   class ApplicationController < ActionController::Base
 
     before_filter :authentication_with_devise
+    before_action :user_authorized?
 
+    rescue_from Octokit::NotFound, with: :force_sign_out
+
+    private
+    def user_authorized?
+      @user = session[:user]
+      return redirect_to authorization_path if @user.nil?
+    end
+
+
+    protected
+    def force_sign_out
+      redirect_to sign_out_path
+    end
+
+    
     private
 
     def authentication_with_devise

@@ -1,6 +1,23 @@
 module Dashing
   class ApplicationController < ActionController::Base
-
+    puts 'start newline'
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts ''
+    puts 'end newline'
     before_filter :authentication_with_devise
     before_action :user_authorized?
 
@@ -18,7 +35,7 @@ module Dashing
       redirect_to sign_out_path
     end
 
-    
+
     private
 
     def authentication_with_devise

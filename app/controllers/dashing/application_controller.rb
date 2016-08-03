@@ -1,6 +1,6 @@
 module Dashing
   class ApplicationController < ActionController::Base
-    puts 'start newline'
+    puts 'start newline2'
     puts ''
     puts ''
     puts ''
@@ -17,7 +17,7 @@ module Dashing
     puts ''
     puts ''
     puts ''
-    puts 'end newline'
+    puts 'end newline2'
     before_filter :authentication_with_devise
     before_action :user_authorized?
 

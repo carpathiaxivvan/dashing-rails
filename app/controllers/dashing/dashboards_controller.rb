@@ -1,6 +1,6 @@
 module Dashing
   class DashboardsController < ApplicationController
-    puts 'start newline2'
+    puts 'start newline3'
     puts ''
     puts ''
     puts ''
@@ -17,7 +17,7 @@ module Dashing
     puts ''
     puts ''
     puts ''
-    puts 'end newline2'
+    puts 'end newline3'
     before_action :verify_github_permission
     before_filter :check_dashboard_name, only: :show
 

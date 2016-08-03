@@ -28,7 +28,7 @@ module Dashing
       @user = session[:user]
       puts 'authorization_path'
       puts authorization_path
-      return redirect_to '/authorization' if @user.nil?
+      return redirect_to authorization_path if @user.nil?
     end
 
 

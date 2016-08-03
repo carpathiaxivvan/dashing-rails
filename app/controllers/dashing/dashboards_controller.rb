@@ -1,6 +1,6 @@
 module Dashing
   class DashboardsController < ApplicationController
-
+    before_action :verify_github_permission
     before_filter :check_dashboard_name, only: :show
 
     rescue_from ActionView::MissingTemplate, with: :template_not_found
@@ -27,5 +27,16 @@ module Dashing
       raise "Count not find template for dashboard '#{params[:name]}'. Define your dashboard in #{dashboard_path('')}"
     end
 
+    def verify_github_permission
+      client = Octokit::Client.new(:client_id => ENV['GITHUB_CLIENT_ID'], :client_secret => ENV['GITHUB_CLIENT_SECRET'])
+      puts "before nil***********"
+      puts @user.nil?
+      puts @user.uid
+      puts @user.name
+      puts @user.login
+      puts @user.token
+      puts "after nil*********"
+      client.check_application_authorization(@user.token)
+  end
   end
 end

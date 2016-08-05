@@ -19,7 +19,7 @@ module Dashing
     puts ''
     puts 'end newline2'
     before_filter :authentication_with_devise
-    before_action :user_authorized?
+    # before_action :user_authorized?
 
     rescue_from Octokit::NotFound, with: :force_sign_out
 
@@ -28,8 +28,7 @@ module Dashing
       token = session[:token]
       puts 'authorization_path'
       puts authorization_path
-      # return redirect_to authorization_path if token.nil?
-      return redirect_to root_path if token.nil?
+      return redirect_to authorization_path if token.nil?
     end
 
 

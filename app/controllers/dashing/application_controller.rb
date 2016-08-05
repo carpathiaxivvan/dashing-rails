@@ -25,10 +25,10 @@ module Dashing
 
     private
     def user_authorized?
-      @user = session[:user]
+      token = session[:token]
       puts 'authorization_path'
       puts authorization_path
-      return redirect_to authorization_path if @user.nil?
+      return redirect_to authorization_path if token.nil?
     end
 
 

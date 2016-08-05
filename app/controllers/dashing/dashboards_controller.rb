@@ -47,14 +47,8 @@ module Dashing
 
     def verify_github_permission
       client = Octokit::Client.new(:client_id => ENV['GITHUB_CLIENT_ID'], :client_secret => ENV['GITHUB_CLIENT_SECRET'])
-      puts "before nil***********"
-      puts @user.nil?
-      puts @user.uid
-      puts @user.name
-      puts @user.login
-      puts @user.token
-      puts "after nil*********"
-      client.check_application_authorization(@user.token)
+     
+      client.check_application_authorization(session[:token])
   end
   end
 end

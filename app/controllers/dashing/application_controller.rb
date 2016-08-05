@@ -1,6 +1,6 @@
 module Dashing
   class ApplicationController < ActionController::Base
-    puts 'start newline2'
+    puts 'in customized gem'
     puts ''
     puts ''
     puts ''

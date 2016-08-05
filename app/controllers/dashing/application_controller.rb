@@ -28,7 +28,8 @@ module Dashing
       token = session[:token]
       puts 'authorization_path'
       puts authorization_path
-      return redirect_to authorization_path if token.nil?
+      # return redirect_to authorization_path if token.nil?
+      return redirect_to root_path if token.nil?
     end
 
 

@@ -28,7 +28,7 @@ module Dashing
       token = session[:token]
       puts 'authorization_path'
       puts authorization_path
-      return redirect_to authorization_path if token.nil?
+      return redirect_to "https://coupa-release.herokuapp.com/authorization" if token.nil?
     end
 
 

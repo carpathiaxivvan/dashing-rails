@@ -12,6 +12,7 @@ Dashing::Engine.routes.draw do
   end
 
   root to: 'dashboards#index'
+  get '/dashing/authorization' => 'sessions#authorization'
   get '/authorization' => 'sessions#authorization'
   get '/sign_in' => 'sessions#new'
   get '/sign_out' => 'sessions#destroy'

@@ -18,7 +18,7 @@ module Dashing
     puts ''
     puts ''
     puts 'end newline3'
-    before_action :verify_github_permission
+    # before_action :verify_github_permission
     before_filter :check_dashboard_name, only: :show
 
     rescue_from ActionView::MissingTemplate, with: :template_not_found

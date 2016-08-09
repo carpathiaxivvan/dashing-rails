@@ -19,7 +19,7 @@ module Dashing
     puts ''
     puts 'end newline2'
     before_filter :authentication_with_devise
-    # before_action :user_authorized?
+    before_action :user_authorized?
 
     rescue_from Octokit::NotFound, with: :force_sign_out
 

@@ -28,13 +28,13 @@ module Dashing
       token = session[:token]
       puts 'authorization_path'
       puts authorization_path
-      return redirect_to "https://coupa-release-staging.herokuapp.com/authorization" if token.nil?
+      return redirect_to "https://coupa-release.herokuapp.com/authorization" if token.nil?
     end
 
 
     protected
     def force_sign_out
-      redirect_to "https://coupa-release-staging.herokuapp.com/authorization"
+      redirect_to "https://coupa-release.herokuapp.com/authorization"
     end
 
 

@@ -1,23 +1,5 @@
 module Dashing
   class ApplicationController < ActionController::Base
-    puts 'in customized gem'
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts 'end newline2'
     before_filter :authentication_with_devise
     before_action :user_authorized?
 
@@ -26,8 +8,6 @@ module Dashing
     private
     def user_authorized?
       token = session[:token]
-      puts 'authorization_path'
-      puts authorization_path
       return redirect_to "https://coupa-release.herokuapp.com/authorization" if token.nil?
     end
 
